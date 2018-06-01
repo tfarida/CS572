@@ -3,7 +3,7 @@ var fs = require('fs');
 var path = require('path');
 
 http.createServer(function(req,res){
-    var start = new Date();
+    var start = Date.now();
     var src = fs.createReadStream(path.join(__dirname, 'images', './image_big_padang_IMG_9800.JPG'));
 
     src.on('data', function(data){
@@ -17,7 +17,7 @@ http.createServer(function(req,res){
     })
 
     src.on('end', function(){
-        var now = new Date();
+        var now = Date.now();
         console.log(now-start);
         res.end();
     })
