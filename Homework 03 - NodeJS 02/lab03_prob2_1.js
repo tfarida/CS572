@@ -1,8 +1,12 @@
 var http = require('http');
 var fs = require('fs');
+var path = require('path');
+
 http.createServer(function(req,res){
-    var img = fs.readFileSync('./image_big_paper_1.jpg');
+    var start = new Date();
+    var img = fs.readFileSync(path.join(__dirname, 'images', './image_big_padang_IMG_9800.JPG'));
     res.writeHead(200, {'Content-Type':'image/jpg'});
     res.end(img,'binary');
-    //res.end('Hello World\n');
+    var now = new Date();
+    console.log(now-start);
 }).listen(1337, '127.0.0.1');
