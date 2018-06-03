@@ -1,0 +1,16 @@
+{
+  "name": "lab05",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lab05_express_fetchPromise.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "titin",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "node-fetch": "^2.1.2",
+    "rxjs": "^6.2.0"
+  }
+}
