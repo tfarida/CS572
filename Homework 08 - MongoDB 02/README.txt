@@ -1,5 +1,5 @@
 1) MongoDB queries (restaurants collections)
-The queries are in query_restaurants.js. 
+The queries are in query_restaurants.txt 
 Each line represents the question number. 
 
 2) Revisit homework07
