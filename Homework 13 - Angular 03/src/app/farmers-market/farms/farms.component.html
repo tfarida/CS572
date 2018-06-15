@@ -1,0 +1,14 @@
+<p>
+  farms works!
+</p>
+
+ <ul>
+  <li *ngFor ="let f of data">
+      <a [routerLink]="['farm', f._id]">{{f.Farm}}</a>
+    
+  </li>  
+</ul>
+<hr> 
+<!-- <a [routerLink]="['farm', 'id']">Route Param</a>  -->
+
+<router-outlet></router-outlet>
