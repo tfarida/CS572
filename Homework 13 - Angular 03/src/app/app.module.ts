@@ -6,12 +6,14 @@ import { FarmersMarketModule, MY_ROUTES } from './farmers-market/farmers-market.
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { ErrorComponent } from './error.component';
+import { Error2Component } from './error2.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent, 
-    ErrorComponent
+    ErrorComponent, 
+    Error2Component
   ],
   imports: [
     BrowserModule, 
@@ -19,6 +21,7 @@ import { ErrorComponent } from './error.component';
     RouterModule.forRoot([
       {path: '', component: HomeComponent },
       {path: 'er', component: ErrorComponent },
+      {path: 'er2', component: Error2Component },
       {path: 'farms', children: MY_ROUTES }
       ])
   ],

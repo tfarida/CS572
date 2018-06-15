@@ -11,6 +11,7 @@ import { FarmDetailGuard } from './farm-detail.guard';
 
 export const MY_ROUTES: Routes = [
   { path: 'farms', component: FarmsComponent },
+  { path: 'farm', component: FarmDetailsComponent, canActivate:[FarmDetailGuard]},
    { path: 'farm/:id', component: FarmDetailsComponent, canActivate:[FarmDetailGuard]}
 ];
 

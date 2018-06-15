@@ -15,15 +15,14 @@ export class FarmDetailGuard implements CanActivate {
     console.log(next.params['id']);
     //var id = next.params['id'];
     var farmDetail = this.dataService.getData().find(x => x._id == next.params['id']); 
-    if(next.params['id'] == undefined ){        
-      this.router.navigate(['/', 'er']);
-      //this.router.navigate(['/', 'error']);
+    if(next.params['id'] == undefined || next.params['id'] ==  '' || next.params['id'] ==  null){ 
+      console.log('id undefined');       
+      this.router.navigate(['/', 'er2']);
+      
       return false;
     }
     else if(farmDetail == undefined){
-      //this.router.navigate(['/', 'farm', '1']);
       this.router.navigate(['/', 'er']);
-      //this.router.navigate(['/', 'error']);
       return false;
     }
     return true;
