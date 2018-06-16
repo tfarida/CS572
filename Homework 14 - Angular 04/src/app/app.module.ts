@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { MyDDComponentComponent } from './my-ddcomponent.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ThankyouComponent } from './thankyou.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,11 @@ import { ThankyouComponent } from './thankyou.component';
     ThankyouComponent
   ],
   imports: [
-    BrowserModule, ReactiveFormsModule, HttpClientModule
+    BrowserModule, ReactiveFormsModule, HttpClientModule, 
+    RouterModule.forRoot([
+      {path: 'thankyou', component: ThankyouComponent },
+      
+      ])
   ],
   providers: [],
   bootstrap: [AppComponent]
