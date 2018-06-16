@@ -22,20 +22,7 @@ export class MyDDComponentComponent implements OnInit {
        'post': ['', [Validators.required, Validators.minLength(10)]]   
       }
     );
-    // this.myForm = formBuilder.group({
-    //   'userData': formBuilder.group({
-    //     'username': ['Asaad', [Validators.required, this.exampleValidator]],
-    //     'email': ['', [
-    //       Validators.required,
-    //       Validators.pattern("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")
-    //     ]]
-    //   }),
-    //   'password': ['', Validators.required],
-    //   'gender': ['male'],
-    //   'hobbies': formBuilder.array([
-    //     ['Cooking', Validators.required, this.asyncExampleValida]
-    //   ])
-    // });
+    
   }
 
   onSubmit():void{
@@ -46,14 +33,11 @@ export class MyDDComponentComponent implements OnInit {
   postIndex = 0;
   onGetData(){
     this.userpostService.getUserData().subscribe(data => {
-     // console.log(data);
       this.myForm.controls.name.setValue(data['name']);
       this.myForm.controls.email.setValue(data['email']);
     });
     this.userpostService.getPostData().subscribe(data => {
-      //console.log(data);
-      //console.log(this.postIndex);
-      //console.log(data.length);
+
       if(data[this.postIndex] != undefined){
         this.myForm.controls.post.setValue(data[this.postIndex++].body);  
       }
@@ -61,13 +45,8 @@ export class MyDDComponentComponent implements OnInit {
         this.postIndex = 0;
         this.myForm.controls.post.setValue(data[this.postIndex++].body);
       }
-     // if(this.postIndex < data.length){
         this.myForm.controls.post.setValue(data[this.postIndex++].body);        
-      // }
-      // else{
-      //   this.postIndex = 0;
-      //   this.myForm.controls.post.setValue(data[this.postIndex++].body);
-      // }
+
       
     })
   }

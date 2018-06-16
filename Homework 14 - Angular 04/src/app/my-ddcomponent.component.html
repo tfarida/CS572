@@ -4,40 +4,30 @@
 <form [formGroup]="myForm" (ngSubmit) = "onSubmit()">
     <div class="form-group">
         <label for="name">Name:</label>
-        <input type="text" class="form-control" id="name" formControlName="name">
+        <input type="text" class="form-control" id="name" formControlName="name" 
+        >
+        <div class="error" *ngIf="!myForm.controls['name'].valid">
+         Required!
+       </div>
     </div>
     <!-- <div *ngIf="!myForm.controls['name'].valid">Required</div> -->
     <div class="form-group">
         <label for="email">Email:</label>
         <input type="text" class="form-control" id="email" formControlName="email">
+        <div class="error" *ngIf="!myForm.controls['email'].valid">
+          Required!
+        </div>
     </div>
     <div class="form-group">
         <label for="post">Post:</label>
         <textarea class="form-control" rows="5" id="post" formControlName="post"></textarea>
 
         <!-- <input type="text" class="form-control" id="post" formControlName="post"> -->
+        <div [ngClass]="error" *ngIf="!myForm.controls['post'].valid">
+          Minimum length 10
+        </div>
     </div>
     <button type="submit" class="btn btn-primary" [disabled]="!myForm.valid">Submit</button>
     <button type="button" class="btn btn-default" (click)="onGetData()">Get Data</button>
 </form>
 
-<!-- <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-  <div formGroupName="userData">
-    <div class="form-group">
-      <label for="username">Name</label>
-      <input type="text" class="form-control" id="username" formControlName="name">
-    </div>
-    <div class="form-group">
-      <label for="email">E-Mail</label>
-      <input type="text" class="form-control" id="email" formControlName="email">
-      <div *ngIf="!myForm.get('userData').get('email').valid">
-        Invalid Email
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="post">Post</label>
-      <input type="text" class="form-control" id="post" formControlName="username">
-    </div>
-  </div>
-  <button type="submit" class="btn btn-primary" [disabled]="!myForm.valid">Submit</button>
-</form> -->
