@@ -1,0 +1,27 @@
+div.container {
+    width : 500px;
+    margin: 20px auto
+}
+
+span.label {
+
+    display: block;
+}
+
+div.controls {
+
+    margin: 20px;
+}
+
+textarea.controls {
+    width: 165px;
+}
+
+div.error {
+
+    color: red
+}
+
+div.success {
+    color: green;
+}
