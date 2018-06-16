@@ -4,7 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   // templateUrl: './app.component.html',
   template: `
-  <app-my-ddcomponent> </app-my-ddcomponent>
+  
+  <router-outlet></router-outlet>
   `,
   styleUrls: ['./app.component.css']
 })

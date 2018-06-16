@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl} from '@angular/forms';
 import { Observable } from 'rxjs';
 import { UserpostService } from './userpost.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-my-ddcomponent',
@@ -11,7 +12,7 @@ import { UserpostService } from './userpost.service';
 export class MyDDComponentComponent implements OnInit {
 
   myForm: FormGroup;
-  constructor(private formBuilder: FormBuilder, private userpostService: UserpostService) { 
+  constructor(private formBuilder: FormBuilder, private userpostService: UserpostService, private router: Router) { 
     this.myForm = formBuilder.group(
       { 
        'name': ['', [Validators.required]], 
@@ -39,6 +40,7 @@ export class MyDDComponentComponent implements OnInit {
 
   onSubmit():void{
     console.log('you submit a value: ', this.myForm.value);
+    this.router.navigate(['/', 'thankyou']);
     
   }
   postIndex = 0;
@@ -52,7 +54,7 @@ export class MyDDComponentComponent implements OnInit {
       //console.log(data);
       //console.log(this.postIndex);
       //console.log(data.length);
-      if(data[this.postIndex++] != undefined){
+      if(data[this.postIndex] != undefined){
         this.myForm.controls.post.setValue(data[this.postIndex++].body);  
       }
       else{

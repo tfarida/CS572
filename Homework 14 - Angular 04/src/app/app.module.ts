@@ -20,6 +20,7 @@ import { RouterModule } from '@angular/router';
   imports: [
     BrowserModule, ReactiveFormsModule, HttpClientModule, 
     RouterModule.forRoot([
+      {path: '', component: MyDDComponentComponent },
       {path: 'thankyou', component: ThankyouComponent },
       
       ])
