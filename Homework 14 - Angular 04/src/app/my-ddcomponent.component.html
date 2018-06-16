@@ -23,7 +23,7 @@
         <textarea class="form-control" rows="5" id="post" formControlName="post"></textarea>
 
         <!-- <input type="text" class="form-control" id="post" formControlName="post"> -->
-        <div [ngClass]="error" *ngIf="!myForm.controls['post'].valid">
+        <div class="error" *ngIf="!myForm.controls['post'].valid">
           Minimum length 10
         </div>
     </div>
